@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: CadetBlue;
+  
+  #charity-header {
+      display: flex;
+      justify-content: center;
+      opacity: .8;
+      height: 5rem;
+      padding-top: 1rem;
+    }
+  
+    #charity-header img {
+      height: 4rem;
+    }
+  
+    button {
+      position: relative;
+      background-color:DarkGreen;
+      border: none;
+      border-radius: 5px;
+      height: 3rem;
+      width: max-content;
+      color: cornsilk;
+      font-size: 18px;
+      justify-self: center;
+    }
+  
+    .remove {
+      position: relative;
+      background: transparent;
+      height: auto;
+      width: auto;
+      justify-self: center;
+    }
+    
+    .container {
+      padding: 1rem;
+      width: 225px;
+      height: 400px;
+      display: block;
+      opacity: .8;
+      margin: auto;
+    }
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+    .card {
+      text-align: center;
+      padding: 5px;
+    }
+  
+    .charity-avatar{
+      width: 324px; 
+      height: 393px;
+      border: 5px ridge DarkOliveGreen;
+    }
+  
+  
+    .cart-container {
+      border: 5px ridge brown;
+      background-color: white;
+      position:absolute;
+      top:70px;
+      right: 25px;
+      overflow: scroll;
+      height: auto;
+      max-height: 30em;
+      display: none;
+      justify-content: center;
+    }
+  
+    #welcome{
+      position:absolute;
+      top:200px;
+      left: 70px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  
+    #cart-btn{
+      position:absolute;
+      top:70px;
+      right: 50px;
+      background-color: blanchedalmond;
+    }
+  
+    .checkout {
+      position: relative;
+      background-color:lightgray;
+      border: ridge black;
+      height: auto;
+      width: max-content;
+      color: black;
+      font-size: 15px;
+    }
+  
+    #logout{
+      position:absolute;
+      top:70px;
+      left: 50px;
+      height: 50px;
+      background-color: blanchedalmond;
+    }
+  
+    .sort-menus{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
