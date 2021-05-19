@@ -9,6 +9,8 @@ class CharitiesController < ApplicationController
       charity = Charity.find_by(id: params[:id])
       if charity
         render json: charities, except: [:created_at, :updated_at]
+        render json: sort
+        render json: find
       else 
         render json: {message: "Charity not located."}
       end 
