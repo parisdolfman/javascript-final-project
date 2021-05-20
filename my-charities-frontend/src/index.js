@@ -10,6 +10,8 @@ const mainContainer = document.querySelector("main")
 const logoutBtn = document.querySelector(".logout-btn")
 const sortOptions = document.querySelector('.sort-menus')
 
+let loggedIn = null
+
 let glyphStates = {
     "♡": "♥",
     "♥": "♡"
@@ -44,9 +46,9 @@ function fetchCharities() {
     fetch(CHARITIES_URL)
       .then((res) => res.json())
       .then((charities) => renderCharities(charities));
-  }
+}
   
-  function renderCharities(charities) {
+function renderCharities(charities) {
     console.log(charities);
     const mainContainer = document.getElementById('main-container');
     charities.forEach((charity) => {
@@ -59,9 +61,16 @@ function fetchCharities() {
           </br>
         </div>`;
     });
-  }
+}
 
 fetchCharities();
+
+function renderLoggedInUser(){
+    let welcome = document.getElementById('welcome-container');
+    welcome.innertText = " "
+    welcome.innerText = `Welcome ${loggedIn.name}!`
+}
+renderLoggedInUser();
 
 signUpForm.addEventListener('submit', function(e){
     e.preventDefault()
