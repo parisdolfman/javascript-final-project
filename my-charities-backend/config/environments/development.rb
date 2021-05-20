@@ -75,5 +75,5 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   #Render an HTML page w/ debugging information
-  config.debug_exception_response_format = :defauly
+  config.debug_exception_response_format = :default
 end

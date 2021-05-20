@@ -1,4 +1,5 @@
 class CharitiesController < ApplicationController
+require 'pry'
 
     def index
         charities = Charity.all
@@ -19,7 +20,7 @@ class CharitiesController < ApplicationController
     private
 
     def charity_params
-        params.require(:charity).permit(:name, :type, :image)
+        params.require(:charity).permit(:name, :image, :category)
     end 
 
 end
