@@ -39,7 +39,7 @@ class ListCharitiesController < ApplicationController
     
     private
     
-    def cart_plant_params
-        params.require(:cart_plant).permit(:cart_id, :plant_id)
+    def list_charity_params
+        params.require(:list_charity).permit(:list_id, :charity_id)
     end 
 end
