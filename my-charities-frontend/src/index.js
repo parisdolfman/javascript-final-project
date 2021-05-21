@@ -11,29 +11,34 @@ const logoutBtn = document.querySelector(".logout-btn")
 const sortOptions = document.querySelector('.sort-menus')
 
 let loggedIn = null
+let signedUp = false
 
-let glyphStates = {
-    "♡": "♥",
-    "♥": "♡"
-  };
+listBtn.addEventListener('mouseover', () =>{
+    listContainer.style.display = "block"
+})
 
-let colorStates = {
-    "blue" : "",
-    "": "blue"
-};
+// let glyphStates = {
+//     "♡": "♥",
+//     "♥": "♡"
+//   };
 
-let articleHearts = document.querySelectorAll(".like-glyph");
+// let colorStates = {
+//     "blue" : "",
+//     "": "blue"
+// };
+
+// let articleHearts = document.querySelectorAll(".like-glyph");
 
 
-function likeCallback(e) {
-    let heart = e.target;
-    heart.innerText = glyphStates[heart.innerText];
-    heart.style.color = colorStates[heart.style.color];
-}
+// function likeCallback(e) {
+//     let heart = e.target;
+//     heart.innerText = glyphStates[heart.innerText];
+//     heart.style.color = colorStates[heart.style.color];
+// }
 
-for (let glyph of articleHearts) {
-    glyph.addEventListener("click", likeCallback);
-}
+// for (let glyph of articleHearts) {
+//     glyph.addEventListener("click", likeCallback);
+// }
 
 sortOptions.addEventListener('change', function(e){
     fetch(BASE_URL + `/${e.target.value}`)
@@ -109,8 +114,8 @@ function checkForUser(){
     }
 }
 
-checkForUser();
 
+checkForUser()
 
 
 
