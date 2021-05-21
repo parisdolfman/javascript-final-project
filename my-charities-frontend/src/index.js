@@ -1,6 +1,8 @@
 const BASE_URL = "http://localhost:3000"
 const CHARITIES_URL = `${BASE_URL}/charities`;
 const USERS_URL = `${BASE_URL}/users`;
+const LIST_CHARITIES_URL = `${BASE_URL}/list_charities`;
+const LISTS_URL = `${BASE_URL}/lists`;
 
 const signUpForm = document.querySelector(".container")
 const addUserForm = document.querySelector(".signup-form")
@@ -113,7 +115,7 @@ function addToList(event){
 
 function removeFromList(event){
     let listCharity = event.target.dataset.listCharityId
-    fetch(CART_PLANTS_URL + "/" + cartPlant, {
+    fetch(CART_PLANTS_URL + "/" + listCharity, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",

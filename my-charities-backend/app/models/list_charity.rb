@@ -1,0 +1,2 @@
+class ListCharity < ApplicationRecord
+end

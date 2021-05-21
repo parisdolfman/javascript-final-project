@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :list_charities
+  resources :lists
   resources :charities, only: [:index, :show]
   resources :users, only: [:index, :show, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

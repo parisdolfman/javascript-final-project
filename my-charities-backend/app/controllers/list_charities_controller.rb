@@ -1,0 +1,2 @@
+class ListCharitiesController < ApplicationController
+end
