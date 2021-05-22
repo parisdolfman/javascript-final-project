@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
 
     def index
-        charities = Charity.all
+        lists = List.all
         render json: lists, :except => [:created_at, :updated_at]
         render json: lists(:include => {
             :user => {:only => [:name]},
