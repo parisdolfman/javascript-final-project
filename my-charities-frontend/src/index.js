@@ -65,7 +65,7 @@ sortOptions.addEventListener('change', function(e){
 })
 
 function renderLoggedInUser(){
-    let currentList = loggedIn.lists[loggedIn.lists.length - 1]
+    // let currentList = loggedIn.lists[loggedIn.lists.length - 1]
     let welcome = document.querySelector('#welcome-container')
     welcome.innertText = " "
     welcome.innerText = `Welcome ${loggedIn.name}!`
@@ -77,6 +77,7 @@ function renderLoggedInUser(){
     // }
     fetchCharities() 
 }
+
 
 
 function fetchCharities() {
