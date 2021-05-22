@@ -11,9 +11,10 @@ class UsersController < ApplicationController
     end 
 
     def create
-        user = User.find_or_create_by(name: params[:name])
-        user.email = params[:email]
+        user = User.find_or_create_by(email: params[:email])
+        user.name = params[:name]
         user.save
+        render json: user
     end 
 
     private

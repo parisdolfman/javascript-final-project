@@ -16,6 +16,12 @@ const sortOptions = document.querySelector('.sort-menus')
 
 let loggedIn = null
 let signedUp = false
+let charitiesObj = {}
+
+
+function hideSignUpForm(){
+    signUpForm.style.display = 'none'
+}
 
 signUpForm.addEventListener('submit', function(e){
     e.preventDefault()
@@ -33,8 +39,8 @@ signUpForm.addEventListener('submit', function(e){
     .then(res => res.json())
     .then(function(object){
         loggedIn = object
-        localStorage.loggedIn = object.id
-        renderLoggedInUser()
+        sessionStorage.setItem('loggedIn', object.id)
+        renderLoggedInUser(object)
         }
     )
 })
@@ -60,19 +66,17 @@ sortOptions.addEventListener('change', function(e){
 
 function renderLoggedInUser(){
     let currentList = loggedIn.lists[loggedIn.lists.length - 1]
-    let welcome = document.querySelector('#welcome')
+    let welcome = document.querySelector('#welcome-container')
     welcome.innertText = " "
     welcome.innerText = `Welcome ${loggedIn.name}!`
     listContainer.innerHTML = " "
-    updateQuantity()
-    for (let name in charitiesObj) {
-        let list_charity = charitiesObj[name][0]
-        listContainer.innerHTML += `<div id="listcharity-${list_charity.id}"><p> <img src=${removeIcon} onClick=removeFromList(event) data-list-charity-id="${list_charity.id}"> 
-        <img src=${addIcon} onClick=addToList(event) data-list-charity-id="${list_charity.id}" data-charity-id="${list_charity.charity.id}"> <strong>${list_charity.charity.name}</strong> </p></div>`
-    }
+    // for (let name in charitiesObj) {
+        // let list_charity = charitiesObj[name][0]
+        // listContainer.innerHTML += `<div id="listcharity-${list_charity.id}"><p> <img src=${removeIcon} onClick=removeFromList(event) data-list-charity-id="${list_charity.id}"> 
+        // <img src=${addIcon} onClick=addToList(event) data-list-charity-id="${list_charity.id}" data-charity-id="${list_charity.charity.id}"> <strong>${list_charity.charity.name}</strong> </p></div>`
+    // }
     fetchCharities() 
 }
-
 
 
 function fetchCharities() {
@@ -98,8 +102,6 @@ function renderCharities(charities) {
 }
 
 
-
-
 function addToList(event){
     let listId = loggedIn.lists[loggedIn.lists.length - 1].id
     let charityCard = event.target.parentElement
@@ -114,11 +116,11 @@ function addToList(event){
             charity_id: `${event.target.dataset.charityId}`,
         }),
     })
-    .then(res => res.json())
-    .then(res => {
-        loggedIn = res
-        renderLoggedInUser()
-    })
+        .then(res => res.json())
+        .then(res => {
+            loggedIn = res
+            renderLoggedInUser()
+        })
 }
 
 function removeFromList(event){
