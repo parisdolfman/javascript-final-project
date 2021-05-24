@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_21_172618) do
+ActiveRecord::Schema.define(version: 2021_05_24_175451) do
 
   create_table "charities", force: :cascade do |t|
     t.string "name"
@@ -21,17 +21,13 @@ ActiveRecord::Schema.define(version: 2021_05_21_172618) do
     t.integer "user_id"
   end
 
-  create_table "list_charities", force: :cascade do |t|
-    t.integer "list_id"
-    t.integer "charity_id"
+  create_table "user_charities", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "charity_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "lists", force: :cascade do |t|
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["charity_id"], name: "index_user_charities_on_charity_id"
+    t.index ["user_id"], name: "index_user_charities_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,4 +37,6 @@ ActiveRecord::Schema.define(version: 2021_05_21_172618) do
     t.string "email"
   end
 
+  add_foreign_key "user_charities", "charities"
+  add_foreign_key "user_charities", "users"
 end
