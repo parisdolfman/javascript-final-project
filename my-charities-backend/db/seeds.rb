@@ -9,8 +9,6 @@
 User.create(name: 'AAA')
 
 Charity.create!(name: 'United Way Worldwide', image: 'https://www.unitedway.org/assets/img/new-logo.svg', category: 'Domestic Needs')
-Charity.create(name: 'Feeding America', image: 'https://www.feedingamerica.org/themes/custom/ts_feeding_america/images/svgs/logo-2020.svg', category: 'Domestic Needs')
-Charity.create(name: 'Animal Welfare Institute', image: 'https://awionline.org/themes/awi/logo.svg', category: 'Animal Protection')
 Charity.create(name: 'Direct Relief', image: 'https://www.qlik.com/blog/assets/uploads/images/direct-relief.jpg', category: 'International Needs')
 Charity.create(name: 'Salvation Army', image: 'https://www.salvationarmyusa.org/templates/usa_nhq_symphony/static_resources/images/global/shield.svg', category: 'Domestic Needs')
 Charity.create(name: 'Bat Conservation International', image: 'https://www.batcon.org/wp-content/uploads/2020/07/19_BCI_LOGO_ALTERNATE_CIRCULAR_WEBSITE_RGB_FULL_COLOR.svg',  category: 'Animal Protection')
@@ -24,6 +22,6 @@ Charity.create(name: 'PetSmart Charities', image: 'https://upload.wikimedia.org/
 Charity.create(name: 'Nature Conservancy', image: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/91/Nature_Conservancy.svg/250px-Nature_Conservancy.svg.png',category: 'Environment/Animal')
 Charity.create(name: 'Mount Sinai Health Systems', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Mount_Sinai_Health_System_logo.svg/150px-Mount_Sinai_Health_System_logo.svg.png', category: 'Medical')
 Charity.create(name: 'Planned Parenthood Federation of America', image: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/2c/Planned_Parenthood_logo.svg/220px-Planned_Parenthood_logo.svg.png', category: 'Domestic Needs')
-Charity.create(name: 'Dian Fossey Gorilla Fund International', image: 'https://gorillafund.org/wp-content/uploads/2018/01/Logo.png', category: 'Animal Protection')
+
 
 puts 'data loaded success'
