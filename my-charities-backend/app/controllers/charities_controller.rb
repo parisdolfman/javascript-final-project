@@ -24,4 +24,3 @@ class CharitiesController < ApplicationController
       end 
   
   end
-  
