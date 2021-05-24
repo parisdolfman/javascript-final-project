@@ -103,26 +103,31 @@ function renderCharities(charities) {
 }
 
 
-function addToList(event){
-    let listId = loggedIn.lists[loggedIn.lists.length - 1].id
-    let charityCard = event.target.parentElement
-    fetch(LIST_CHARITIES_URL, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-        },
-        body: JSON.stringify({
+function addToList(event) {
+    let id = localStorage.loggedIn;
+    fetch(USERS_URL + '/' + id)
+      .then((res) => res.json())
+      .then(function (res) {
+        let charityCard = event.target.parentElement;
+        let listId = res.lists[res.lists.length - 1].id;
+        fetch(LIST_CHARITIES_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
             list_id: `${listId}`,
             charity_id: `${event.target.dataset.charityId}`,
-        }),
-    })
-        .then(res => res.json())
-        .then(res => {
-            loggedIn = res
-            renderLoggedInUser()
+          }),
         })
-}
+          .then((res) => res.json())
+          .then((res) => {
+            loggedIn = res;
+            renderLoggedInUser();
+          });
+      });
+  }
 
 function removeFromList(event){
     let listCharity = event.target.dataset.listCharityId
