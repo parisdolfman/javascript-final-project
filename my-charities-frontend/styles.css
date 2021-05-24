@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: sans-serif;
     background-color: CadetBlue;
-  
+}
   #charity-header {
       display: flex;
       justify-content: center;
@@ -15,7 +15,7 @@ body {
       height: 4rem;
     }
   
-    button {
+     button {
       position: relative;
       background-color:DarkGreen;
       border: none;
@@ -25,7 +25,7 @@ body {
       color: cornsilk;
       font-size: 18px;
       justify-self: center;
-    }
+    } 
   
     .remove {
       position: relative;
