@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: CadetBlue;
+    background-color: AliceBlue;
 }
   #charity-header {
       display: flex;
@@ -14,18 +14,6 @@ body {
     #charity-header img {
       height: 4rem;
     }
-  
-     /* button {
-      position: relative;
-      background-color:DarkGreen;
-      border: none;
-      border-radius: 5px;
-      height: 3rem;
-      width: max-content;
-      color: cornsilk;
-      font-size: 18px;
-      justify-self: center;
-    }  */
   
     .remove {
       position: relative;
@@ -43,11 +31,13 @@ body {
       opacity: .8;
       margin: auto;
     }
+
     main {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
     }
+
     .card {
       text-align: center;
       padding: 5px;
@@ -99,8 +89,8 @@ body {
     }
   
     #logout{
-      position:absolute;
-      top:70px;
+      position: relative;
+      top: 70px;
       left: 50px;
       height: 50px;
       background-color: blanchedalmond;

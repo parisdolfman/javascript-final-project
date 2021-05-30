@@ -13,7 +13,7 @@ const mainContainer = document.querySelector('main');
 const listContainer = document.querySelector('.list-container');
 const listBtn = document.querySelector('.list-button');
 const logoutBtn = document.querySelector('.logout-btn');
-const sortOptions = document.querySelector('.sort-menus');
+// const sortOptions = document.querySelector('.sort-menus');
 
 let loggedIn = null;
 let signedUp = false;
@@ -56,11 +56,11 @@ logoutBtn.addEventListener('click', () => {
   window.location.reload();
 });
 
-sortOptions.addEventListener('change', function (e) {
-  fetch(BASE_URL + `/${e.target.value}`)
-    .then((res) => res.json())
-    .then((charities) => renderCharities(charities));
-});
+// sortOptions.addEventListener('change', function (e) {
+//   fetch(BASE_URL + `/${e.target.value}`)
+//     .then((res) => res.json())
+//     .then((charities) => renderCharities(charities));
+// });
 
 function renderLoggedInUser(loggedIn, userCharityIds) {
   let welcome = document.querySelector('#welcome-container');
