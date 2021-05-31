@@ -39,6 +39,7 @@ signUpForm.addEventListener('submit', function (e) {
     .then((res) => res.json())
     .then(function (object) {
       localStorage.setItem('loggedIn', object.data.id);
+      localStorage.setItem('current-user', JSON.stringify(object.data));
       renderLoggedInUser(object.data);
     });
 });
@@ -59,6 +60,7 @@ logoutBtn.addEventListener('click', () => {
 
 function renderLoggedInUser(loggedIn, userCharityIds) {
   let welcome = document.querySelector('#welcome-container');
+  const user = JSON.parse(localStorage.getItem('current-user'))
   welcome.innertText = ' ';
   welcome.innerText = `Welcome ${loggedIn.name}!`;
   fetchCharities(userCharityIds);
