@@ -1,4 +1,5 @@
 class UserCharitiesController < ApplicationController
+
   def create
     user_charity = UserCharity.find_by(user_id: params[:user_id], charity_id: params[:charity_id])
 
@@ -10,4 +11,6 @@ class UserCharitiesController < ApplicationController
 
     render json: UserSerializer.new(user_charity.user).serialized_json
   end
+
+  
 end

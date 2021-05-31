@@ -56,11 +56,6 @@ logoutBtn.addEventListener('click', () => {
   window.location.reload();
 });
 
-// sortOptions.addEventListener('change', function (e) {
-//   fetch(BASE_URL + `/${e.target.value}`)
-//     .then((res) => res.json())
-//     .then((charities) => renderCharities(charities));
-// });
 
 function renderLoggedInUser(loggedIn, userCharityIds) {
   let welcome = document.querySelector('#welcome-container');
@@ -76,6 +71,7 @@ function fetchCharities(userCharityIds) {
 }
 
 function renderCharities(charities, userCharityIds = []) {
+  updateSelectedModal(charities, userCharityIds);
   const mainContainer = document.getElementById('main-container');
   mainContainer.innerHTML = '';
   charities.forEach((charity) => {
@@ -145,6 +141,23 @@ function checkForUser() {
     signUpForm.style.display = 'block';
   }
 }
+
+const updateSelectedModal = (charities, selectedIds) => {
+  console.log(selectedIds);
+  const charityFrag = document.createDocumentFragment();
+  for (let i = 0; i < charities.length; i++) {
+    if (selectedIds.includes(charities[i].id)) {
+      const paragraph = document.createElement('p');
+      paragraph.innerText = charities[i].name;
+      charityFrag.appendChild(paragraph);
+    }
+    console.log(charityFrag.children.length);
+    console.log(listContainer);
+  }
+  listContainer.innerText = '';
+  listContainer.appendChild(charityFrag);
+};
+
 
 const userId = () => localStorage.getItem('loggedIn');
 
